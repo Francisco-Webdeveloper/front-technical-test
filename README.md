@@ -26,6 +26,15 @@ Una vez transcurridas las 2 horas mándanos en un email con el enlace a tu repos
 
 ## Para empezar:
 
+Instala primero las dependencias:
+
+```bash
+npm run install
+# o
+yarn
+```
+
+Y empieza con:
 
 ```bash
 npm run dev
