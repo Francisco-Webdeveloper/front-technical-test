@@ -23,7 +23,6 @@ Una vez transcurridas las 2 horas mándanos en un email con el enlace a tu repos
 ## Antes de empezar, asegurate que tienes:
 
 - Node.js ^12.22.0 || ^14.17.0 || >=16.0.0
-- MacOS, Windows (including WSL), and Linux
 
 ## Para empezar:
 
