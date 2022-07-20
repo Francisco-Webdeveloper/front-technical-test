@@ -1,0 +1,40 @@
+.productCard {
+  margin: 0 24px;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid grey;
+  height: 600px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .productCard {
+    width: 30%;
+  }
+}
+
+@media (min-width: 992px) {
+  .productCard {
+    width: 20%;
+  }
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.productPrice {
+  display: flex;
+}
+
+.price {
+  margin-right: 10px;
+}
+
+.productRating {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: #fff;
+}
