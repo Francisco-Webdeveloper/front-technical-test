@@ -7,18 +7,28 @@ export default function Home() {
   // TODO: Implement product list component
   const [products, setProducts] = useState([]);
 
-  const fetchApi = (searchTerm = null) => {
-    fetch(
-      `https://dummyjson.com/products?limit=10&skip=0&search?q=${searchTerm}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        setProducts(res.products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const fetchApi = (searchTerm) => {
+    if (!searchTerm) {
+      fetch("https://dummyjson.com/products?limit=10&skip=0")
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          setProducts(res.products);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      fetch(`https://dummyjson.com/products/search?q=${searchTerm}`)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          setProducts(res.products);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   console.log(products);
@@ -27,17 +37,13 @@ export default function Home() {
     fetchApi();
   }, []);
 
-  // const onSearch = (searchTerm) => {
-  //   fetchApi(searchTerm)
-  // }
+  const onSearch = (searchTerm) => {
+    fetchApi(searchTerm);
+  };
 
   return (
     <>
-      <Search
-        onSearch={(searchTerm) => {
-          fetchApi(searchTerm);
-        }}
-      />
+      <Search onSearch={onSearch} />
       <ProductList products={products} />
     </>
   );

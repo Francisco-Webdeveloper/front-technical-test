@@ -25,7 +25,7 @@ export function Search({ onSearch }) {
       />
       <button
         onClick={() => {
-          onSearch(userSearch.name);
+          onSearch(userSearch.device);
         }}
       >
         Search
